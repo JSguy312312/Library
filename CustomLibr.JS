@@ -34,12 +34,17 @@
 
     
 
+    var TextElm = "code";
+    var CE = "document.getElementById(TextElm).value";
+    eval(CE);
+
+
+    document.addEventListener("click", function(event) {
+            var TextElm = "code";
+            var CE = "document.getElementById(TextElm).value";
+            eval(CE);
     
-    var script = document.createElement('script');
-    script.src = 'code';
-    document.write(script.outerHTML);
-
-
+    });
 
 
 
