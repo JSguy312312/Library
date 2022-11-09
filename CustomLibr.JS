@@ -39,9 +39,11 @@
     eval(CE);
 
 
-    document.addEventListener("click", function(event) {
-            var TextElm = "code";
-            var CE = "document.getElementById(TextElm).value";
+    var TextElm = "code";
+    var elm = document.getElementById("run");
+    var CE = "document.getElementById(TextElm).value";
+    elm.addEventListener("click", function(event) {
+
             eval(CE);
     
     });
