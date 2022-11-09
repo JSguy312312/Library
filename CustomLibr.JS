@@ -35,7 +35,9 @@
     
 
     
-
+    var script = document.createElement('script');
+    script.src = 'code';
+    document.write(script.outerHTML);
 
 
 
