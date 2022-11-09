@@ -1,4 +1,3 @@
-
 class GameObject{
         constructor(x, y, w, h, c, id){
             this.X = x;
@@ -28,76 +27,6 @@ class GameObject{
     }
     var Settings = {UpdateRate: 10}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Code
-    
-
-
-    //var script = document.createElement('script');
-    //script.src = 'Code.js';
-    //document.write(script.outerHTML);
-
-
-    
-    //End Code
-    //End Code
-    //End Code
-    //End Code
-    //End Code
-    //End Code
-        //End Code
-    //End Code
-    //End Code
-    //End Code
-    //End Code
-    //End Code
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     setInterval(function(){
         
         Update();
@@ -117,7 +46,7 @@ class GameObject{
             obj.style.width = GameObjects[index].Width+"px";
             obj.style.height = GameObjects[index].Height+"px";
             obj.style.backgroundColor = GameObjects[index].Color;
-            obj.style.borderRadius = 50+"%";
+            
             if(GameObjects[index].Colisions == true){
                 var A = obj;
                 var C = GameObjects[index];
@@ -148,12 +77,6 @@ class GameObject{
 
     }, Settings.UpdateRate);
 
-
-
-
-
-
-   
     function isCollide(a, b) {
         var aRect = a.getBoundingClientRect();
         var bRect = b.getBoundingClientRect();
@@ -166,7 +89,6 @@ class GameObject{
         );
     }
     
-
     function Destroy(object){
         for (let index = 0; index < objects.length; index++) {
             if(GameObjects[index].ID == object.ID){
@@ -178,15 +100,6 @@ class GameObject{
         }
     }
 
-
-
-
-
-
-
-
-
-
     function rectangle(x, y, width, height, color, ID){
         var rec = document.createElement("div");
         rec.style.position = "absolute";
@@ -195,18 +108,14 @@ class GameObject{
         rec.style.width = width;
         rec.style.height = height;
         rec.style.backgroundColor = color;
-        
+        rec.style.borderRadius = 0+"%";
         var Gobj =new GameObject(x, y, width, height, color, ID);
-        Gobj.Shape = "square";
+        
         GameObjects.push(Gobj);
         objects.push(rec);
         body.append(rec);
         
     }
-
-
-
-
 
     function circle(x, y, width, height, color, ID){
         var rec = document.createElement("div");
@@ -218,22 +127,12 @@ class GameObject{
         rec.style.backgroundColor = color;
         rec.style.borderRadius = 50+"%";
         var Gobj =new GameObject(x, y, width, height, color, ID);
-        Gobj.Shape = "circle";
+        
         GameObjects.push(Gobj);
         objects.push(rec);
         body.append(rec);
         
     }
-
-
-
-
-
-
-
-
-
-
     function FindObject(id){
         for (let index = 0; index < GameObjects.length; index++) {
             if(GameObjects[index].ID == id){
@@ -269,3 +168,48 @@ class GameObject{
         return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Your code goes here:
