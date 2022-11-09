@@ -34,16 +34,14 @@
 
     
 
-    var TextElm = "code";
-    var CE = "document.getElementById(TextElm).value";
-    eval(CE);
+
 
 
     var TextElm = "code";
     var elm = document.getElementById("run");
     var CE = "document.getElementById(TextElm).value";
     elm.addEventListener("click", function(event) {
-
+            
             eval(CE);
     
     });
