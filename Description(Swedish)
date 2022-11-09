@@ -1,0 +1,89 @@
+Den här texten visar hur du använder den här koden.
+
+Varje objekt innehåller en position, en färg, ett id och en storlek.
+Ett id är som ett namn på ett objekt, du kan använda ett objekts id för att ändra olika saker om den.
+
+
+Koder:
+
+rectangle(x, y, width, height, color, id);
+//Skapar en rektangel.
+
+circle(x, y, width, height, color, id);
+//Skapar en cirkel.
+
+FindObject(id)
+//Används för att hitta olika Objekt med deras id.
+//Exempel:  FindObject(1).X = 100;  << Här hittar vi objektet med id 1, och sätter X positionen till 100.
+//Här är allt du kan ändra på ett objekt.
+
+.X    << sätter X positionen på objektet.
+
+.Y    << sätter y positionen på objektet.
+
+.Width    << Sätter bredden på objektet.
+
+.Height    << Sätter höjden på objektet.
+
+.Color    << Sätter färgen på objektet.
+
+.Collisions     << Kan antingen vara sann eller falsk, om den är sann kommer objektet kunna känna av kollisioner med andra objekt.
+
+.Velocity.x    << Flyttar objektet i en hastighet angivet i en siffra åt sidan, en negativ siffra gör att den åker åt andra hållet.
+
+.Velocity.y    << Flyttar objektet i en hastighet angivet i en siffra upp och ner, en negativ siffra gör att den åker åt andra hållet.
+
+//
+
+//Det finns en loop som körs hela tiden.
+//den skrivs så här:
+function Update()
+{
+
+  //Här skriver du koden som ska köras förevigt.
+
+}
+
+//Saker som man vill göra hela tiden kan vara att kolla om användaren trycker på tangentbordet.
+//För att göra det använder du en "if-sats", den kollar om nånting är sant eller falskt, om det är sant kommer koden innut i den att köras.
+
+if(KeyDown("KeyW"))
+{
+  //Här skriver du koden som ska hända när du trycker ner knappen
+}
+
+//Bokstaven "W" i "KeyW" kan bytas ut med vilken bokstav som helst.
+//Glöm inte att skriva "if-satsen" i föralltid loopen, så att programet inte bara kollar om kappen är der tryckt i starten.
+
+
+function Update()
+{
+  if(KeyDown("KeyW"))
+  {
+      //Här skriver du koden som ska hända när du trycker ner knappen
+  }
+
+}
+
+
+
+//För att kolla om två object kolliderar kan du skriva:
+
+function OnCollide(x, y)
+{
+
+}
+
+//Här är X det första objektet, och y det andra som kolliderar.
+
+
+function OnCollide(x, y)
+{
+    if(x.ID == 1 && y.ID == 2)
+    {
+    
+      //Här skriver du koden som kommer att hända om objektet med id 1 och objektet med id 2 kolliderar.
+    }
+}
+
+
