@@ -45,6 +45,14 @@ class GameObject{
             //if(GameObjects[index].CanMove.x){GameObjects[index].X += GameObjects[index].Velocity.x;}
             //if(GameObjects[index].CanMove.y){GameObjects[index].Y += GameObjects[index].Velocity.y;}
             
+/*             if(Gobj.TuchingMouse){
+                Gobj.Pressed = true;
+            }else{Gobj.Pressed = false;} */
+
+            if(GameObjects[index].TuchingMouse && Mouse.Down){
+                GameObjects[index].Pressed = true;
+            }
+            else{GameObjects[index].Pressed = false;}
 
 
 
@@ -123,14 +131,12 @@ class GameObject{
 
         var Gobj =new GameObject(x, y, width, height, color, ID);
         rec.addEventListener("mouseenter",function(){Gobj.TuchingMouse = true;})
-        rec.addEventListener("mouseout",function(){Gobj.TuchingMouse = true;})
+        rec.addEventListener("mouseleave",function(){Gobj.TuchingMouse = false;})
 
-        rec.addEventListener("mousedown", function(){
-            if(Gobj.TuchingMouse){
-                Gobj.Pressed = true;
-            }else{Gobj.Pressed = false;}
+        
+
             
-        });
+        
 
         
         
