@@ -31,8 +31,10 @@ class GameObject{
     var Settings = {UpdateRate: 10}
 
     setInterval(function(){
+        if(! typeof Function.name == "Update"){
+            Update();
+        }
         
-        Update();
 
         for (let index = 0; index < objects.length; index++) {
             var obj = objects[index];
