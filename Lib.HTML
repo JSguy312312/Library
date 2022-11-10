@@ -10,7 +10,8 @@ class GameObject{
             this.Height = h;
             this.Color = c;
             this.Colisions = false;
-            
+            this.Pressed = false;
+            this.TuchingMouse = false;
             this.ID = id;
         }
 
@@ -119,7 +120,19 @@ class GameObject{
         rec.style.height = height;
         rec.style.backgroundColor = color;
         rec.style.borderRadius = 0+"%";
+
         var Gobj =new GameObject(x, y, width, height, color, ID);
+        rec.addEventListener("mouseenter",function(){Gobj.TuchingMouse = true;})
+        rec.addEventListener("mouseout",function(){Gobj.TuchingMouse = true;})
+
+        rec.addEventListener("mousedown", function(){
+            if(Gobj.TuchingMouse){
+                Gobj.Pressed = true;
+            }else{Gobj.Pressed = false;}
+            
+        });
+
+        
         
         GameObjects.push(Gobj);
         objects.push(rec);
@@ -175,6 +188,27 @@ class GameObject{
             return true;
         }
     }
+
+    var Mouse = {X: 0, Y: 0, Down: false}
+    document.addEventListener("mousemove", function(event){
+        Mouse.X = event.clientX;
+        Mouse.Y = event.clientY;
+    });
+    document.addEventListener("mousedown", function(){
+        Mouse.Down = true;
+    });
+    document.addEventListener("mouseup", function(){
+
+        Mouse.Down = false;
+        for (let index = 0; index < GameObjects.length; index++) {
+            GameObjects[index].Pressed = false;
+            
+        }
+    });
+
+
+
+
 
     function Random(min, max) {
         min = Math.ceil(min);
