@@ -14,12 +14,13 @@ class GameObject{
             this.ID = id;
         }
 
-        enable_collision(){
-            Solid = true;
-        }
-    } 
+
+            
+}
+
     var GameObjects = [];
     var objects = [];
+
     const Display = {
         Height: screen.height,
         Width: screen.width, 
@@ -39,6 +40,7 @@ class GameObject{
             var obj = objects[index];
             GameObjects[index].X += GameObjects[index].Velocity.x;
             GameObjects[index].Y += GameObjects[index].Velocity.y;
+            
             //if(GameObjects[index].CanMove.x){GameObjects[index].X += GameObjects[index].Velocity.x;}
             //if(GameObjects[index].CanMove.y){GameObjects[index].Y += GameObjects[index].Velocity.y;}
             
@@ -78,6 +80,10 @@ class GameObject{
                 }
             }
         }
+
+
+
+
 
     }, Settings.UpdateRate);
 
@@ -137,6 +143,10 @@ class GameObject{
         body.append(rec);
         
     }
+
+
+
+
     function FindObject(id){
         for (let index = 0; index < GameObjects.length; index++) {
             if(GameObjects[index].ID == id){
@@ -172,9 +182,9 @@ class GameObject{
         return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
     }
     
-
-
-
+    function Color(R, G, B){
+        return "rgb("+R+", "+G+", "+B+")"; 
+    }
 
 
 
