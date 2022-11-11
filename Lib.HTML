@@ -12,6 +12,8 @@ class GameObject{
             this.Colisions = false;
             this.Pressed = false;
             this.TuchingMouse = false;
+            this.Text = "";
+            this.isText = false;
             this.ID = id;
         }
 
@@ -61,7 +63,7 @@ class GameObject{
             obj.style.width = GameObjects[index].Width+"px";
             obj.style.height = GameObjects[index].Height+"px";
             obj.style.backgroundColor = GameObjects[index].Color;
-            
+            if(obj.isText){obj.innerText = GameObjects[index].Text;}
             if(GameObjects[index].Colisions == true){
                 var A = obj;
                 var C = GameObjects[index];
@@ -160,6 +162,26 @@ class GameObject{
 
 
 
+    function text(text, x, y, size, color, ID){
+        var rec = document.createElement("h1");
+        rec.style.position = "absolute";
+        rec.style.left = x+"px";
+        rec.style.top = y+"px";
+
+        rec.style.color = color;
+        rec.style.fontSize = size+"px";
+        rec.innerText = text;
+        var Gobj =new GameObject(x, y, 10, 10, color, ID);
+        Gobj.isText = true;
+        Gobj.Text = text;
+        rec.addEventListener("mouseenter",function(){Gobj.TuchingMouse = true;})
+        rec.addEventListener("mouseleave",function(){Gobj.TuchingMouse = false;})
+
+        GameObjects.push(Gobj);
+        objects.push(rec);
+        body.append(rec);
+        
+    }
 
     function FindObject(id){
         for (let index = 0; index < GameObjects.length; index++) {
