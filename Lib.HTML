@@ -34,7 +34,7 @@ class GameObject{
 
     setInterval(function(){
 
-        Update();
+        Forever();
         
 
         for (let index = 0; index < objects.length; index++) {
@@ -133,13 +133,6 @@ class GameObject{
         rec.addEventListener("mouseenter",function(){Gobj.TuchingMouse = true;})
         rec.addEventListener("mouseleave",function(){Gobj.TuchingMouse = false;})
 
-        
-
-            
-        
-
-        
-        
         GameObjects.push(Gobj);
         objects.push(rec);
         body.append(rec);
@@ -156,7 +149,9 @@ class GameObject{
         rec.style.backgroundColor = color;
         rec.style.borderRadius = 50+"%";
         var Gobj =new GameObject(x, y, width, height, color, ID);
-        
+        rec.addEventListener("mouseenter",function(){Gobj.TuchingMouse = true;})
+        rec.addEventListener("mouseleave",function(){Gobj.TuchingMouse = false;})
+
         GameObjects.push(Gobj);
         objects.push(rec);
         body.append(rec);
